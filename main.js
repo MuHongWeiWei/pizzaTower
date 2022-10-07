@@ -24,6 +24,7 @@ main()
 async function main() {
     myAddress = await wallet.getAddress()
     console.log(yellow("登入成功: " + myAddress))
+    console.log(yellow("參數設定成功: " + process.env.second + " 秒\n"))
 
     while (true) {
         console.log(blue(new Date().toLocaleTimeString()));
@@ -48,7 +49,7 @@ async function main() {
         } else {
             console.log("你根本沒玩\n")
         }
-        await sleep(10 * 1000);
+        await sleep(process.env.second * 1000);
     }
 }
 
